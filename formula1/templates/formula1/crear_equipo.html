@@ -1,0 +1,16 @@
+{% extends 'index/index.html' %}
+
+{% block 'body_block' %}
+    
+    <h1 class="masthead-heading text-uppercase mb-0">Equipos</h1>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <button>Crear</button>
+    </form>
+
+
+{% endblock 'body_block' %}

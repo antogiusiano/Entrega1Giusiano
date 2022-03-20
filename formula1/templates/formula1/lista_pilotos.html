@@ -1,8 +1,10 @@
 {% extends 'index/index.html' %}
 
-{% block 'body_block' %}
-    
-    <h1 class="masthead-heading text-uppercase mb-0">Pilotos</h1>
+{% block 'imagen' %}
+{% endblock 'imagen' %}
+
+{% block 'body_block' %}   
+    <h1 class="masthead-heading text-uppercase mb-0">Busca tu piloto</h1>
 
     <form action="" method="get">
         {% csrf_token %}
@@ -15,5 +17,7 @@
     {% for piloto in pilotos %}
         <li>{{piloto}}</li>
     {% endfor %}
-
 {% endblock 'body_block' %}
+
+{% block 'body_block_sub' %}
+{% endblock 'body_block_sub' %}

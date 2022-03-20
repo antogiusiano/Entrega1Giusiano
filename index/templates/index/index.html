@@ -39,8 +39,11 @@
         <!-- Masthead-->
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
+                {% block 'imagen' %}
+                    <img class="masthead-avatar mb-5" src="static/assets/img/formula1.svg" alt="..." />
+                {% endblock 'imagen' %}
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="static/assets/img/formula1.svg" alt="..." />
+                
                 <!-- Masthead Heading-->
                 {% block 'body_block' %}
                     <h1 class="masthead-heading text-uppercase mb-0">Formula 1</h1>
@@ -51,8 +54,10 @@
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
+                {% block 'body_block_sub' %}
                 <!-- Masthead Subheading-->
                 <p class="masthead-subheading font-weight-light mb-0">Competición de Automovilismo Internacional</p>
+                {% endblock 'body_block_sub' %}
             </div>
         </header>
 

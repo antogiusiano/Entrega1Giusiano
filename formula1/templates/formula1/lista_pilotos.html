@@ -3,8 +3,8 @@
 {% block 'imagen' %}
 {% endblock 'imagen' %}
 
-{% block 'body_block' %}   
-    <h1 class="masthead-heading text-uppercase mb-0">Busca tu piloto</h1>
+{% block 'bloque_cuerpo' %}   
+    <h1 class="masthead-heading text-uppercase mb-0">busca tu piloto</h1>
 
     <form action="" method="get">
         {% csrf_token %}
@@ -17,7 +17,7 @@
     {% for piloto in pilotos %}
         <li>{{piloto}}</li>
     {% endfor %}
-{% endblock 'body_block' %}
+{% endblock 'bloque_cuerpo' %}
 
-{% block 'body_block_sub' %}
-{% endblock 'body_block_sub' %}
+{% block 'bloque_cuerpo_sub' %}
+{% endblock 'bloque_cuerpo_sub' %}

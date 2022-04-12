@@ -3,11 +3,11 @@
 {% block 'imagen' %}
 {% endblock 'imagen' %}
 
-{% block 'bloque_cuerpo' %}
-    <h1 class="masthead-heading text-uppercase mb-0">Crea tu Piloto</h1>
+{% block 'bloque_cuerpo' %}   
+    <h1 class="masthead-heading text-uppercase mb-0">busca tu piloto</h1>
 
     <p>
-        <a href={% url 'pilotos' %}>Volver</a>
+        <a href={% url 'pilotos' %}> Volver</a>
     </p>
 
     <form action="" method="post">
@@ -15,8 +15,10 @@
         <table>
             {{form.as_table}}
         </table>
-        <button>Crear</button>
+        <button>Editar</button>
     </form>
+
+
 {% endblock 'bloque_cuerpo' %}
 
 {% block 'bloque_cuerpo_sub' %}

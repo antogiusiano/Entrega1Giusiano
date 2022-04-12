@@ -6,6 +6,10 @@
 {% block 'bloque_cuerpo' %}   
     <h1 class="masthead-heading text-uppercase mb-0">busca tu piloto</h1>
 
+    <p>
+        <a href={% url 'crear_piloto' %}>Crear Piloto</a>
+    </p>
+
     <form action="" method="get">
         {% csrf_token %}
         <table>
@@ -15,7 +19,12 @@
     </form>
 
     {% for piloto in pilotos %}
-        <li>{{piloto}}</li>
+        <li>
+            <a href={% url 'detalle_piloto' piloto.id %}>{{piloto}}</a> |
+            <a href={% url 'editar_piloto' piloto.id %}>Editar</a> |
+            <a href={% url 'borrar_piloto' piloto.id %}>Borrar</a>
+            
+        </li>
     {% endfor %}
 {% endblock 'bloque_cuerpo' %}
 

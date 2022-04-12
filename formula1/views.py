@@ -1,6 +1,8 @@
 from django.shortcuts import redirect, render
 from .forms import PilotoFormulario,EquipoFormulario,CircuitoFormulario, PilotoBusqueda
 from .models import Equipos, Piloto, Equipos, Circuito
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import UpdateView, DeleteView
 
 def crear_piloto(request):
     
@@ -55,3 +57,18 @@ def lista_pilotos(request):
         
     form = PilotoBusqueda()
     return render(request, 'formula1/lista_pilotos.html', {'form': form, 'pilotos':pilotos})
+
+class DetallePiloto(DetailView):
+    model = Piloto
+    template_name = 'formula1/detalle_piloto.html'
+
+
+class EditarPiloto(UpdateView):
+    model = Piloto
+    success_url = '/formula1/pilotos/'
+    fields = ['nombre', 'apellido', 'equipo', 'pais']
+
+
+class BorrarPiloto(DeleteView):
+    model = Piloto
+    success_url = '/formula1/pilotos/'

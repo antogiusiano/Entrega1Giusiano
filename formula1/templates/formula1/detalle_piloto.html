@@ -1,0 +1,23 @@
+{% extends 'index/index.html' %}
+
+{% block 'imagen' %}
+{% endblock 'imagen' %}
+
+{% block 'bloque_cuerpo' %}   
+    <h1 class="masthead-heading text-uppercase mb-0">busca tu piloto</h1>
+
+    <p>
+        <a href={% url 'pilotos' %}> Volver</a>
+    </p>
+
+    <p>
+        <li>Nombre: {{object.nombre}}</li>
+        <li>Apellido: {{object.apellido}}</li>
+        <li>Equipo: {{object.equipo}}</li>
+        <li>Pais: {{object.pais}}</li>
+    </p>
+
+{% endblock 'bloque_cuerpo' %}
+
+{% block 'bloque_cuerpo_sub' %}
+{% endblock 'bloque_cuerpo_sub' %}

@@ -3,7 +3,10 @@ from .forms import PilotoFormulario,EquipoFormulario,CircuitoFormulario, PilotoB
 from .models import Equipos, Piloto, Equipos, Circuito
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import UpdateView, DeleteView
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
+@login_required
 def crear_piloto(request):
     
     if request.method == 'POST':
@@ -11,7 +14,7 @@ def crear_piloto(request):
         
         if form.is_valid():
             data = form.cleaned_data
-            piloto = Piloto(nombre=data['nombre'], apellido=data['apellido'], equipo=data['equipo'], pais=data['pais'])
+            piloto = Piloto(nombre=data['nombre'], apellido=data['apellido'], equipo=data['equipo'], pais=data['pais'], tarjeta_presentacion=data['tarjeta_presentacion'])
             piloto.save()
             return redirect('pilotos')
             
@@ -63,12 +66,12 @@ class DetallePiloto(DetailView):
     template_name = 'formula1/detalle_piloto.html'
 
 
-class EditarPiloto(UpdateView):
+class EditarPiloto(LoginRequiredMixin,UpdateView):
     model = Piloto
     success_url = '/formula1/pilotos/'
-    fields = ['nombre', 'apellido', 'equipo', 'pais']
+    fields = ['nombre', 'apellido', 'equipo', 'pais', 'tarjeta_presentacion']
 
 
-class BorrarPiloto(DeleteView):
+class BorrarPiloto(LoginRequiredMixin,DeleteView):
     model = Piloto
     success_url = '/formula1/pilotos/'

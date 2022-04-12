@@ -1,10 +1,12 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 class Piloto(models.Model):
     nombre = models.CharField(max_length=20)
     apellido = models.CharField(max_length=30)
     equipo = models.CharField(max_length=40)
     pais = models.CharField(max_length=20)
+    tarjeta_presentacion = RichTextField(blank=True, null=True)
     
     def __str__(self):
         return f'{self.nombre} {self.apellido} {self.equipo}'

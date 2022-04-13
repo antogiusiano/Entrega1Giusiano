@@ -1,0 +1,25 @@
+{% extends 'index/index.html' %}
+
+{% block 'imagen' %}
+{% endblock 'imagen' %}
+
+{% block 'bloque_cuerpo' %}
+    <h1 class="masthead-heading text-uppercase mb-0">Editar Usuario</h1>
+
+    <p>      
+        {% if msj %}
+             {{msj}}
+        {% endif %}
+    </p>
+
+    <form action={% url 'editar_usuario' %} method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <button>Guardar cambios</button>
+    </form>
+{% endblock 'bloque_cuerpo' %}
+
+{% block 'bloque_cuerpo_sub' %}
+{% endblock 'bloque_cuerpo_sub' %}

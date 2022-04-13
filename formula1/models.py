@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.utils import timezone
 
 class Piloto(models.Model):
     nombre = models.CharField(max_length=20)
@@ -7,6 +8,7 @@ class Piloto(models.Model):
     equipo = models.CharField(max_length=40)
     pais = models.CharField(max_length=20)
     tarjeta_presentacion = RichTextField(blank=True, null=True)
+    fecha_creacion = models.DateTimeField(default=timezone.now)
     
     def __str__(self):
         return f'{self.nombre} {self.apellido} {self.equipo}'

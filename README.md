@@ -1,3 +1,5 @@
+Nombre participante: Antonella Maria Giusiano
+
 Pasos a seguir:
 1- Entrar a indice
 2- Acceder a 'CREAR PILOTO', completar los datos y presionar 'Crear'

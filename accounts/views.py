@@ -35,7 +35,7 @@ def registrarse(request):
         if form.is_valid():
             username = form.cleaned_data['username']
             form.save()
-            return render(request, 'accounts/index.html', {'msj': f' Se creo correctamente al usuario {username}'})
+            return render(request, 'accounts/registrarse.html', {'msj': f' Se creo correctamente al usuario {username}'})
         else:
             return render(request, 'accounts/registrarse.html', {'form': form, 'msj':'El formulario no es valido'})
         

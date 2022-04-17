@@ -18,9 +18,9 @@
         <li>Subtitulo: {{object.subtitulo | safe}}</li>
         <li>Cuerpo: {{object.cuerpo | safe}}</li>
         <li>Fecha creacion: {{object.fecha_creacion | date:'d-m-Y H:m'}}</li>
-        {% if object.imagen %}
-            <li><img src="{{object.imagen.url}}" alt="imagen"></li>
-        {% endif %}
+        {% if object.imagen %} 
+            <img src="{{object.imagen.url}}" alt="imagen">
+        {% endif %} 
         <li>Fecha Imagen: {{object.fecha_imagen | date:'d-m-Y H:m'}}</li>
     </p>
 {% endblock 'bloque_cuerpo' %}

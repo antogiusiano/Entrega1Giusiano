@@ -2,9 +2,16 @@ Nombre participante: Antonella Maria Giusiano
 
 Pasos a seguir:
 1- Entrar a indice
-2- Acceder a 'CREAR PILOTO', completar los datos y presionar 'Crear'
-3- Repetir el paso 2 con 'CREAR EQUIPO' y 'CREAR CIRCUITO'
-4- Acceder a 'LISTAR PILOTOS', colocar el nombre del piloto a buscar y presionar 'Buscar'
+2- Acceder a 'Sobre mi '
+4- Acceder a 'Registarse', completar los datos y presionar el boton.
+5- Acceder a Login e ingresar los datos del usuario.
+6- Seleccionar donde aparece el nombre del usuario y completar los datos.
+7- Acceder a 'Blog Pilotos'
+    a- Para crear un blog acceder a 'Crear Blog Piloto' , completar los datos y presionar crear.
+    b- Para buscar un blog de un piloto , completar el campo de nombre y presionar buscar.
+    c- Para saber mas datos del blog dle piloto presionar 'Leer mas'.
+    d- Para editar el blog de un piloto presionar 'Editar', modificar los campos que desee y presionar editar
+    e- Para borrar el blog de un piloto presionar 'Borrar'
 
 
 ----------------------

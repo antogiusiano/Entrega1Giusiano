@@ -8,9 +8,3 @@ def about(request):
 
 def pages(request):
     return render(request, 'index/pilotos.html', {})
-
-def equipos(request):
-    return render(request, 'index/equipos.html', {})
-
-def circuitos(request):
-    return render(request, 'index/circuitos.html', {})

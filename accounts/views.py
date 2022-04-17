@@ -57,7 +57,7 @@ def editar_usuario(request):
             request.user.last_name = form.cleaned_data['last_name']
             user_extension_logued.avatar = form.cleaned_data['avatar']
             user_extension_logued.link = form.cleaned_data['link']
-            user_extension_logued.more_description = form.cleaned_data['more_description']
+            user_extension_logued.mas_descripcion = form.cleaned_data['mas_descripcion']
             
             if form.cleaned_data['password1'] != '' and form.cleaned_data['password1'] == form.cleaned_data['password2']:
                 request.user.set_password(form.cleaned_data['password1'])
@@ -77,7 +77,7 @@ def editar_usuario(request):
                 'email': request.user.email,
                 'avatar' : user_extension_logued.avatar,
                 'link' : user_extension_logued.link,
-                'more_description' : user_extension_logued.more_description,
+                'mas_descripcion' : user_extension_logued.mas_descripcion,
                 'password1' : '',
                 'password2' : ''
         }

@@ -4,7 +4,7 @@
 {% endblock 'imagen' %}
 
 {% block 'bloque_cuerpo' %}   
-    <h1 class="masthead-heading text-uppercase mb-0">busca tu piloto</h1>
+    <h1 class="masthead-heading text-uppercase mb-0">Sobre el piloto</h1>
 
     <p>
         <a href={% url 'pilotos' %}> Volver</a>
@@ -14,11 +14,15 @@
         <li>Nombre: {{object.nombre}}</li>
         <li>Apellido: {{object.apellido}}</li>
         <li>Equipo: {{object.equipo}}</li>
-        <li>Pais: {{object.pais}}</li>
-        <li>Tarjeta de Presentación: {{object.tarjeta_presentacion | safe}}</li>
+        <li>Titulo: {{object.titulo | safe}}</li>
+        <li>Subtitulo: {{object.subtitulo | safe}}</li>
+        <li>Cuerpo: {{object.cuerpo | safe}}</li>
         <li>Fecha creacion: {{object.fecha_creacion | date:'d-m-Y H:m'}}</li>
+        {% if object.imagen %}
+            <li><img src="{{object.imagen.url}}" alt="imagen"></li>
+        {% endif %}
+        <li>Fecha Imagen: {{object.fecha_imagen | date:'d-m-Y H:m'}}</li>
     </p>
-
 {% endblock 'bloque_cuerpo' %}
 
 {% block 'bloque_cuerpo_sub' %}

@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
+
 @login_required
 def crear_piloto(request):
     
@@ -15,7 +16,7 @@ def crear_piloto(request):
         
         if form.is_valid():
             data = form.cleaned_data
-            piloto = Piloto(nombre=data['nombre'], apellido=data['apellido'], equipo=data['equipo'], pais=data['pais'], tarjeta_presentacion=data['tarjeta_presentacion'])
+            piloto = Piloto(nombre=data['nombre'], apellido=data['apellido'], equipo=data['equipo'], titulo=data['titulo'],subtitulo=data['subtitulo'], cuerpo=data['cuerpo'], imagen=data['imagen'], fecha_imagen=data['fecha_imagen'])
             piloto.save()
             return redirect('pilotos')
             
@@ -69,10 +70,10 @@ class DetallePiloto(DetailView):
 
 class EditarPiloto(LoginRequiredMixin,UpdateView):
     model = Piloto
-    success_url = '/formula1/pilotos/'
-    fields = ['nombre', 'apellido', 'equipo', 'pais', 'tarjeta_presentacion']
+    success_url = '/formula1/pages/'
+    fields = ['nombre', 'apellido', 'equipo', 'titulo', 'subtitulo', 'cuerpo', 'imagen']
 
 
 class BorrarPiloto(LoginRequiredMixin,DeleteView):
     model = Piloto
-    success_url = '/formula1/pilotos/'
+    success_url = '/formula1/pages/'

@@ -4,10 +4,10 @@
 {% endblock 'imagen' %}
 
 {% block 'bloque_cuerpo' %}   
-    <h1 class="masthead-heading text-uppercase mb-0">busca tu piloto</h1>
+    <h1 class="masthead-heading text-uppercase mb-0">Blog de pilotos</h1>
 
     <p>
-        <a href={% url 'crear_piloto' %}>Crear Piloto</a>
+        <a href={% url 'crear_piloto' %}>Crear Blog Piloto</a>
     </p>
 
     <form action="" method="get">
@@ -18,14 +18,20 @@
         <button>Buscar</button>
     </form>
 
-    {% for piloto in pilotos %}
+    {% if pilotos %}
+        {% for piloto in pilotos %}
         <li>
-            <a href={% url 'detalle_piloto' piloto.id %}>{{piloto}}</a> |
-            <a href={% url 'editar_piloto' piloto.id %}>Editar</a> |
-            <a href={% url 'borrar_piloto' piloto.id %}>Borrar</a>
-            
-        </li>
-    {% endfor %}
+        {{piloto}}
+        <a href={% url 'detalle_piloto' piloto.id %}>Leer mas</a> |
+        <a href={% url 'editar_piloto' piloto.id %}>Editar</a> |
+        <a href={% url 'borrar_piloto' piloto.id %}>Borrar</a>
+         </li>
+        {% endfor %}
+    {% else %}
+        <p>No hay blogs de pilotos aún</p>
+    {% endif %}
+
+
 {% endblock 'bloque_cuerpo' %}
 
 {% block 'bloque_cuerpo_sub' %}

@@ -6,8 +6,7 @@ def index(request):
 def about(request):
      return render(request, 'index/about.html', {})
 
-
-def pilotos(request):
+def pages(request):
     return render(request, 'index/pilotos.html', {})
 
 def equipos(request):

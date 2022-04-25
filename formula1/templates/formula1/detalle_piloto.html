@@ -20,8 +20,9 @@
         <li>Fecha creacion: {{object.fecha_creacion | date:'d-m-Y H:m'}}</li>
         {% if object.imagen %}
         <li>Imagen: <img src="{{object.imagen.url}}" width="400" height="400" alt="imagen de perfil"></li>
-        {% endif %}
         <li>Fecha Imagen: {{object.fecha_imagen | date:'d-m-Y H:m'}}</li>
+        {% endif %}
+        
     </p>
 {% endblock 'bloque_cuerpo' %}
 

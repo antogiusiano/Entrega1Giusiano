@@ -10,11 +10,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 def crear_piloto(request):
     
     if request.method == 'POST':
-        form = PilotoFormulario(request, data = request.POST)
+        form = PilotoFormulario(request.POST)
         
         if form.is_valid():
             data = form.cleaned_data
-            piloto = Piloto(nombre=data['nombre'], apellido=data['apellido'], equipo=data['equipo'], titulo=data['titulo'],subtitulo=data['subtitulo'], cuerpo=data['cuerpo'])
+            piloto = Piloto(nombre=data['nombre'], apellido=data['apellido'], equipo=data['equipo'], titulo=data['titulo'],subtitulo=data['subtitulo'], cuerpo=data['cuerpo'], imagen=data['imagen'])
             piloto.save()
             return redirect('pilotos')
             

@@ -16,11 +16,12 @@
         <li>Nombre: {{request.user.first_name}}</li>
         <li>Apellido: {{request.user.last_name}}</li>
         <li>Email: {{request.user.email}}</li>
+        <li>Link: {{request.user.userextension.link}}</li>
+        <li> Descripcion: {{request.user.userextension.mas_descripcion}}</li>
         {% if request.user.userextension.avatar %}
         <li>Imagen: <img src="{{request.user.userextension.avatar.url}}" width="100" height="100" alt="imagen de perfil"></li>
         {% endif %}
-        <li>Link: {{request.user.userextension.link}}</li>
-        <li> Descripcion: {{request.user.userextension.mas_descripcion}}</li>
+        
     </p>
     
     <a href={% url 'editar_usuario' %}>Editar datos</a>

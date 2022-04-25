@@ -10,7 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 def crear_piloto(request):
     
     if request.method == 'POST':
-        form = PilotoFormulario(request.POST)
+        form = PilotoFormulario(request.POST, request.FILES)
         
         if form.is_valid():
             data = form.cleaned_data
